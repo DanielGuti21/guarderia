@@ -9,10 +9,10 @@
     <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </head>
 <body>
-    <!-- Menú superior -->
+
     <div th:replace="layout/plantilla :: header"></div>
 
-    <!-- Contenido centrado -->
+
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-5">
@@ -49,5 +49,7 @@
             </div>
         </div>
     </div>
+    
+    <footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>
