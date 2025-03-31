@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario de Clases</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        img {
+            width: 100%;
+            max-width: 250px; /* Ajusta el tamaño máximo */
+            margin-bottom: 20px; /* Espaciado entre imágenes */
+        }
+    </style>
+</head>
+<body>
+    
+    <div th:replace="layout/plantilla :: header"></div>
+
+    <header class="bg-primary text-center text-white p-4">
+        <h1 class="fs-2">Horario de Clases</h1>
+    </header>
+
+    <div class="container text-center mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4 d-flex flex-column align-items-center">
+                <img src="imagenes/horario1.jpg" alt="Lunes" class="mb-3"/>
+                <p class="fs-4"><strong>Lunes a Viernes</strong></p>
+                <p class="fs-5">8:00 AM - 12:00 PM</p>
+                <p class="fs-5">2:00 PM - 5:00 PM</p>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center">
+                <img src="imagenes/horario2.jpg" alt="Sábado" class="mb-3"/>
+                <p class="fs-4"><strong>Sábados</strong></p>
+                <p class="fs-5">9:00 AM - 1:00 PM</p>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center">
+                <img src="imagenes/horario3.jpg" alt="Domingo" class="mb-3"/>
+                <p class="fs-4"><strong>Domingos</strong></p>
+                <p class="fs-5">No hay clases</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

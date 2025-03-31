@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Semanal de la Escuela</title>
+    <style>
+        body {
+            font-family: Arial ;
+           
+            background-color: LightGray;
+            text-align: center;
+        }
+        header {
+            background-color: Green;
+            color: White;
+            padding: 15px;
+            font-size: 25px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: White;
+            padding: 20px;
+            box-shadow:  10px Gray;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid Gray;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: Green;
+            color: White;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: green;
+            color: White;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: Gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <div th:replace="layout/plantilla :: header"></div>
+
+    <header>
+        Menú Semanal de la Escuela
+    </header>
+
+    <div class="container">
+        <h2>Consulta el Menú de la Semana</h2>
+        <table>
+            <tr>
+                <th>Día</th>
+                <th>Plato Principal</th>
+                <th>Acompañamiento</th>
+                <th>Postre</th>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>Arroz con pollo</td>
+                <td>Ensalada </td>
+                <td>Fruta</td>
+            </tr>
+            <tr>
+                <td>Martes</td>
+                <td>Pollo con en salsa</td>
+                <td>Pure de papa</td>
+                <td>Gelatina</td>
+            </tr>
+            <tr>
+                <td>Miércoles</td>
+                <td>Pizza </td>
+                <td>Pan de ajo</td>
+                <td>Yogur</td>
+            </tr>
+            <tr>
+                <td>Jueves</td>
+                <td>Carne asada</td>
+                <td>tortilla</td>
+                <td>Helado</td>
+            </tr>
+            <tr>
+                <td>Viernes</td>
+                <td>Pechuga de pollo</td>
+                <td>Verduras</td>
+                <td>pastel</td>
+            </tr>
+        </table>
+
+        <a href="#" class="button">Más Información</a>
+    </div>
+
+</body>
+</html>
