@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos Libres - Guardería</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Cursos Libres</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <style>
         .course-image {
             max-height: 200px;
@@ -23,9 +26,6 @@
 <body>
     <div th:replace="layout/plantilla :: header"></div>
 
-   
-
-    <!-- Contenido Principal -->
     <div class="container mt-4">
         <h1 class="text-center mb-4">Horario de Cursos</h1>
         <table class="table table-striped text-center">
@@ -39,7 +39,6 @@
             <tbody id="cursos-body"></tbody>
         </table>
 
-        <!-- Sección de cursos con imágenes clickeables -->
         <h2 class="text-center mt-5 mb-3">Cursos Destacados</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
@@ -68,7 +67,6 @@
             </div>
         </div>
 
-        <!-- Formulario de contacto -->
         <div class="row mt-5">
             <div class="col-md-8 offset-md-2">
                 <h2 class="text-center mb-4">Consulta sobre Cursos</h2>
@@ -91,7 +89,6 @@
         </div>
     </div>
 
-    <!-- Modal para detalles del curso -->
     <div class="modal fade" id="cursoModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -107,21 +104,17 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script>
-        // Datos de los cursos
         const cursos = [
             { dia: "Lunes", curso: "Arte y Manualidades", horario: "10:00 AM - 11:30 AM" },
             { dia: "Martes", curso: "Música y Ritmo", horario: "10:00 AM - 11:30 AM" },
             { dia: "Miércoles", curso: "Expresión Corporal", horario: "10:00 AM - 11:30 AM" },
         ];
 
-        // Cargar horarios 
         document.getElementById("cursos-body").innerHTML = cursos.map(row =>
             `<tr><td>${row.dia}</td><td>${row.curso}</td><td>${row.horario}</td></tr>`
         ).join('');
 
-        // Mostrar detalles del curso 
         function verDetalle(titulo, descripcion) {
             document.getElementById("cursoModalTitle").innerText = titulo;
             document.getElementById("cursoModalBody").innerText = descripcion;
@@ -129,9 +122,6 @@
         }
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <footer th:replace="layout/plantilla :: footer"></footer>
-
 </body>
 </html>

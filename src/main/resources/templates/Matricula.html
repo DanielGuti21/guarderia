@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Matrícula en Línea</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet">
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
-</head>
-<body>
-    <!-- Menú superior -->
-    <div th:replace="layout/plantilla :: header"></div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Matrícula en Línea</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet">
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    </head>
+    <body>
+        <!-- Menú superior -->
+        <div th:replace="layout/plantilla :: header"></div>
 
-    <!-- Contenido centrado -->
-    <div class="container mt-5 mb-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-5">
-                <div class="card p-4 shadow">
-                    <h2 class="text-center mb-4">Matrícula en Línea</h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="correo" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="correo" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="curso" class="form-label">Curso</label>
-                            <select class="form-select" id="curso" required>
-                                <option value="">Seleccione un curso</option>
-                                <option>Arte y Manualidades</option>
-                                <option>Música y Ritmo</option>
-                                <option>Expresión Corporal</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Inscribirse</button>
-                    </form>
+        <!-- Contenido centrado -->
+        <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card p-4 shadow">
+                        <h2 class="text-center mb-4">Matrícula en Línea</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="correo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" required>
+                            </div>                    
+                            <div class="mb-3">
+                                <label class="form-label">Género</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="generoHombre" value="Hombre" required>
+                                        <label class="form-check-label" for="generoHombre">Hombre</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="generoMujer" value="Mujer" required>
+                                        <label class="form-check-label" for="generoMujer">Mujer</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="edad" class="form-label">Edad</label>
+                                <input type="number" class="form-control" id="edad" min="0" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="curso" class="form-label">Curso</label>
+                                <select class="form-select" id="curso" required>
+                                    <option value="">Seleccione un curso</option>
+                                    <option>Arte y Manualidades</option>
+                                    <option>Música y Ritmo</option>
+                                    <option>Expresión Corporal</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Inscribirse</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <footer th:replace="layout/plantilla :: footer"></footer>
-</body>
+
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
 </html>

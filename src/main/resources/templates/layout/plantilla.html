@@ -21,17 +21,30 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <ul class="navbar-nav">
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/inicioseccion}">Iniciar Sesion</a></li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/Matricula}">Matrícula</a></li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/Cursos}">Cursos</a></li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/horario}">Horarios</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/inicioseccion}">Iniciar Sesión</a></li>
+
+                            <!-- Menú desplegable para "Servicios" -->
+                            <li class="nav-item dropdown px-2">
+                                <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admisión
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                    <li><a class="dropdown-item" th:href="@{/Matricula}">Matrícula</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/Financiamiento}">Planes de Financiamiento</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/horario}">Horarios</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/Requisitos}">Requisitos</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/Nosotros}">Conócenos</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/areaPsicologica}">Área Psicológica</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/Cursos}">Cursos</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/menu}">Comidas</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/metodoDePago}">Método de Pago</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/ubicacion}">Ubicación</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/contacto}">Contacto</a></li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/Nosotros}">Conocenos</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/Redes}">Redes</a></li>
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/Financiamiento}">Planes</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -42,7 +55,7 @@
             <div class="container">
                 <div class="col">
                     <p class="lead text-center">Since 2010</p>
-                 </div>   
+                </div>   
             </div>
         </footer>
     </body>

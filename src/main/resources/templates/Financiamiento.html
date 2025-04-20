@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Planes de financiamiento</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
 
@@ -27,7 +31,7 @@
                     <p style="font-size: 120%;">Financiamiento: Pago Mensual sin intereses</p>
                     <br>
                     <h2>Plan Completo</h2>
-                    <p style="font-size: 120%;"> Perfecto para padres que necesitan cuidado de jornada completa con actividades adicionales.</p>
+                    <p style="font-size: 120%;">Perfecto para padres que necesitan cuidado de jornada completa con actividades adicionales.</p>
                     <br>
                     <p style="font-size: 120%;">Incluye cuidado y atención durante jornada completa (7:00 am - 5:00 pm), actividades educativas, recreativas y artísticas,
                     Almuerzo y meriendas y la participación en talleres semanales (música, arte o deportes).</p>
@@ -41,6 +45,5 @@
 
 
         <footer th:replace="layout/plantilla :: footer"></footer>
-
     </body>
 </html>
