@@ -1,49 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nosotros</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
-        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    </head>
-    <body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head"></head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
 
-        <div th:replace="layout/plantilla :: header"></div>
-
-        <header class="bg-warning text-center p-3">
-            <h1>¿Quienes somos?</h1>
-        </header>
-
-        <div class="container text-center mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <p style="font-size: 140%;">Guardería Estrella Brillante es un espacio dedicado a ofrecer un ambiente seguro, cálido y estimulante para el desarrollo de niños 
-                        pequeños. Desde su apertura en mayo de 2010, nuestra misión ha sido contribuir al crecimiento integral de los niños a través de actividades educativas, 
-                        juegos y cuidados amorosos. Nos esforzamos por crear una comunidad de aprendizaje donde cada niño pueda alcanzar su máximo potencial en un entorno de respeto
-                        y empatía.
-                    </p>
-                    <br>
-                    <br>
-                    <p style="font-size: 140%;">Nuestros valores incluyen el amor, la empatia, la seguridad, la educacion, trabajo en equipo y sobretodo el respeto.
-                    </p>
-                    <br>
-                    <br>
-                    <p style="font-size: 140%;">Nuestra misión es proporcionar experiencias educativas enriquecedoras, fomentando habilidades sociales, cognitivas y emocionales 
-                        en un ambiente lleno de cariño y respeto. Nos comprometemos a ser un apoyo para las familias en la formación integral de sus hijos.
-                    </p>
-                    <img src="imagenes/conocenos.jpg" alt="" style="width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; display: block;" />
-
-                </div>
-            </div>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h2 th:text="#{nosotros.titulo}">¿Quiénes somos?</h2>
         </div>
 
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <img th:src="@{/imagenes/conocenos.jpg}" alt="Guardería"
+                     style="width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; display: block; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
 
-        <footer th:replace="layout/plantilla :: footer"></footer>
+                <p th:text="#{nosotros.descripcion1}">
+                    Guardería Estrella Brillante es un espacio dedicado a ofrecer un ambiente seguro, cálido y estimulante para el desarrollo de niños pequeños.
+                </p>
+                <p th:text="#{nosotros.descripcion2}">
+                    Nuestro equipo está conformado por profesionales capacitados en pedagogía infantil, psicología y salud infantil. Trabajamos con amor y vocación.
+                </p>
+                <p th:text="#{nosotros.descripcion3}">
+                    Nuestra misión es acompañar a cada niño en sus primeras etapas, fomentando su crecimiento integral y respetando su individualidad.
+                </p>
+            </div>
+        </div>
+    </div>
 
-    </body>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
 </html>

@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Planes de financiamiento</title>
-        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
-        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    </head>
-    <body>
+<head th:replace="layout/plantilla :: head"></head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
 
-        <div th:replace="layout/plantilla :: header"></div>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4" th:text="#{financiamiento.titulo}">Planes de Financiamiento</h2>
 
-        <header class="bg-warning text-center p-3">
-            <h1>Planes de Financiamiento</h1>
-        </header>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-success">
+                    <div class="card-header bg-success text-white text-center">
+                        <h4 th:text="#{financiamiento.plan1}">Pago Mensual</h4>
+                    </div>
+                    <div class="card-body">
+                        <p th:text="#{financiamiento.plan1.desc}">Realiza un pago al mes por el total del costo del servicio. Ideal para quienes prefieren pagos continuos.</p>
+                        <p><strong th:text="#{financiamiento.precio}">Precio:</strong> ₡100.000</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="container text-center mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <h2>Plan Básico</h2>
-                    <p style="font-size: 120%;">Ideal para familias que buscan un pago accesible con cobertura de servicios esenciales.</p>
-                    <br>
-                    <p style="font-size: 120%;">Incluye ciudado y atención durante medio dia (mañana o tarde), actividades educativas y recreativas básicas además de una merienda ligera.</p>
-                    <br>
-                    <p style="font-size: 120%;">Costo: ₡100.000 mensuales</p>
-                    <br>
-                    <p style="font-size: 120%;">Financiamiento: Pago Mensual sin intereses</p>
-                    <br>
-                    <h2>Plan Completo</h2>
-                    <p style="font-size: 120%;">Perfecto para padres que necesitan cuidado de jornada completa con actividades adicionales.</p>
-                    <br>
-                    <p style="font-size: 120%;">Incluye cuidado y atención durante jornada completa (7:00 am - 5:00 pm), actividades educativas, recreativas y artísticas,
-                    Almuerzo y meriendas y la participación en talleres semanales (música, arte o deportes).</p>
-                    <br>
-                    <p style="font-size: 120%;">Costo: ₡180.000 mensuales</p>
-                    <br>
-                    <p style="font-size: 120%;">Financiamiento: Opción de pago en dos cuotas quincenales</p>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-info">
+                    <div class="card-header bg-info text-white text-center">
+                        <h4 th:text="#{financiamiento.plan2}">Pago Trimestral</h4>
+                    </div>
+                    <div class="card-body">
+                        <p th:text="#{financiamiento.plan2.desc}">Paga cada tres meses con un pequeño descuento. Ahorra a mediano plazo.</p>
+                        <p><strong th:text="#{financiamiento.precio}">Precio:</strong> ₡285.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-warning">
+                    <div class="card-header bg-warning text-dark text-center">
+                        <h4 th:text="#{financiamiento.plan3}">Pago Semestral</h4>
+                    </div>
+                    <div class="card-body">
+                        <p th:text="#{financiamiento.plan3.desc}">Ideal para quienes desean evitar pagos mensuales. Incluye descuento por fidelidad.</p>
+                        <p><strong th:text="#{financiamiento.precio}">Precio:</strong> ₡550.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-danger">
+                    <div class="card-header bg-danger text-white text-center">
+                        <h4 th:text="#{financiamiento.plan4}">Pago Anual</h4>
+                    </div>
+                    <div class="card-body">
+                        <p th:text="#{financiamiento.plan4.desc}">Elige el plan más económico del año. Ahorra ₡100.000 pagando por adelantado.</p>
+                        <p><strong th:text="#{financiamiento.precio}">Precio:</strong> ₡1.100.000</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-
-        <footer th:replace="layout/plantilla :: footer"></footer>
-    </body>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
 </html>

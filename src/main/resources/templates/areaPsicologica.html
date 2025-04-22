@@ -1,79 +1,54 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Área de Psicología - Guardería</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet">
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: LightGray;
-        }
-        header.custom-header {
-            background-color: Green;
-            color: White;
-            text-align: center;
-            padding: 15px;
-            font-size: 25px;
-        }
-        .custom-container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: White;
-            padding: 20px;
-            box-shadow: 0 0 10px Gray;
-            border-radius: 5px;
-        }
-        h2 {
-            color: Green;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: Green;
-            color: White;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .button:hover {
-            background-color: gray;
-        }
-    </style>
-</head>
+<head th:replace="layout/plantilla :: head"></head>
 <body>
-    
+    <header th:replace="layout/plantilla :: header"></header>
 
-        
-    <div th:replace="layout/plantilla :: header"></div>
-    <header class="custom-header">
-        Área de Psicología - Guardería
-    </header>
-    <div class="custom-container">
-        <h2>¿Qué ofrecemos?</h2>
-        <p>El departamento de psicología de nuestra institución está diseñado para brindar apoyo a los estudiantes en su bienestar emocional y académico. Nuestros profesionales trabajan para ayudar a los alumnos a superar dificultades personales, mejorar su rendimiento escolar y fomentar un ambiente positivo.</p>
-        <h2>Servicios Disponibles</h2>
-        <ul>
-            <li>Asesoramiento individual</li>
-            <li>Sesiones grupales</li>
-            <li>Orientación vocacional</li>
-            <li>Apoyo emocional y social</li>
-        </ul>
-        <h2>Contacto</h2>
-        <p>Si necesitas ayuda o quieres más información, contáctanos:</p>
-        <p><strong>Email:</strong> guarderia@gmail.com</p>
-        <p><strong>Teléfono:</strong> +123 456 789</p>
-        <a href="mailto:guarderia@gmail.com" class="button">Contáctanos</a>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h2 class="text-primary" th:text="#{psicologica.titulo}">Área Psicológica</h2>
+            <i class="fas fa-brain fa-3x text-info my-3"></i>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-lg p-4 border-info mb-4">
+                    <p class="lead" th:text="#{psicologica.descripcion1}">
+                        En Guardería Estrella Brillante contamos con el apoyo de profesionales en psicología infantil...
+                    </p>
+                    <p th:text="#{psicologica.descripcion2}">
+                        Nuestro objetivo es garantizar un ambiente saludable y de confianza...
+                    </p>
+                </div>
+
+                <div class="card shadow-sm border-success">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0" th:text="#{psicologica.servicios}">Servicios que ofrecemos:</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <i class="fas fa-heartbeat text-danger me-2"></i>
+                            <span th:text="#{psicologica.item1}">Evaluación emocional inicial</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-users text-primary me-2"></i>
+                            <span th:text="#{psicologica.item2}">Talleres de habilidades sociales</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-user-check text-info me-2"></i>
+                            <span th:text="#{psicologica.item3}">Apoyo individual en casos especiales</span>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-chalkboard-teacher text-warning me-2"></i>
+                            <span th:text="#{psicologica.item4}">Asesoría a padres y docentes</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>
+

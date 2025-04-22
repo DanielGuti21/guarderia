@@ -1,126 +1,54 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos Libres</title>
-    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
-    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    <style>
-        .course-image {
-            max-height: 200px;
-            width: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .course-card:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
-        }
-    </style>
-</head>
+<head th:replace="layout/plantilla :: head"></head>
 <body>
-    <div th:replace="layout/plantilla :: header"></div>
+    <header th:replace="layout/plantilla :: header"></header>
 
-    <div class="container mt-4">
-        <h1 class="text-center mb-4">Horario de Cursos</h1>
-        <table class="table table-striped text-center">
-            <thead class="table-primary">
-                <tr>
-                    <th>Día</th>
-                    <th>Curso</th>
-                    <th>Horario</th>
-                </tr>
-            </thead>
-            <tbody id="cursos-body"></tbody>
-        </table>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4" th:text="#{cursos.titulo}">Nuestros Cursos</h2>
 
-        <h2 class="text-center mt-5 mb-3">Cursos Destacados</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card course-card">
-                    <img src="https://i.pinimg.com/736x/af/c4/c9/afc4c9ed600c27a312a20d1f1b88b190.jpg" class="card-img-top course-image" alt="Arte y Manualidades" onclick="verDetalle('Arte y Manualidades', 'Curso de pintura, modelado y manualidades creativas para niños')">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Arte y Manualidades</h5>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/736x/af/c4/c9/afc4c9ed600c27a312a20d1f1b88b190.jpg" class="card-img-top" alt="Música">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="#{cursos.musica}">Música y Movimiento</h5>
+                        <p class="card-text" th:text="#{cursos.musica.desc}">...</p>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card course-card">
-                    <img src="https://i.pinimg.com/736x/98/37/5d/98375d9a8fae499c6df6806036e4c87d.jpg" class="card-img-top course-image" alt="Música y Ritmo" onclick="verDetalle('Música y Ritmo', 'Explora el mundo de la música con actividades interactivas')">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Música y Ritmo</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card course-card">
-                    <img src="https://i.pinimg.com/736x/ea/09/ae/ea09ae8633896771e052f28f3578494a.jpg" class="card-img-top course-image" alt="Expresión Corporal" onclick="verDetalle('Expresión Corporal', 'Baile y actividades de movimiento para estimular la creatividad')">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Expresión Corporal</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row mt-5">
-            <div class="col-md-8 offset-md-2">
-                <h2 class="text-center mb-4">Consulta sobre Cursos</h2>
-                <form id="contactoForm">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" required>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/736x/98/37/5d/98375d9a8fae499c6df6806036e4c87d.jpg" class="card-img-top" alt="Arte">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="#{cursos.arte}">Arte Creativo</h5>
+                        <p class="card-text" th:text="#{cursos.arte.desc}">...</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="mensaje" rows="3" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="cursoModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cursoModalTitle"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body" id="cursoModalBody"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/736x/ea/09/ae/ea09ae8633896771e052f28f3578494a.jpg" class="card-img-top" alt="Inglés">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="#{cursos.ingles}">Inglés para Niños</h5>
+                        <p class="card-text" th:text="#{cursos.ingles.desc}">...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://i.pinimg.com/736x/ea/09/ae/ea09ae8633896771e052f28f3578494a.jpg" class="card-img-top" alt="Psicomotricidad">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="#{cursos.psicomotricidad}">Psicomotricidad</h5>
+                        <p class="card-text" th:text="#{cursos.psicomotricidad.desc}">...</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        const cursos = [
-            { dia: "Lunes", curso: "Arte y Manualidades", horario: "10:00 AM - 11:30 AM" },
-            { dia: "Martes", curso: "Música y Ritmo", horario: "10:00 AM - 11:30 AM" },
-            { dia: "Miércoles", curso: "Expresión Corporal", horario: "10:00 AM - 11:30 AM" },
-        ];
-
-        document.getElementById("cursos-body").innerHTML = cursos.map(row =>
-            `<tr><td>${row.dia}</td><td>${row.curso}</td><td>${row.horario}</td></tr>`
-        ).join('');
-
-        function verDetalle(titulo, descripcion) {
-            document.getElementById("cursoModalTitle").innerText = titulo;
-            document.getElementById("cursoModalBody").innerText = descripcion;
-            new bootstrap.Modal(document.getElementById('cursoModal')).show();
-        }
-    </script>
 
     <footer th:replace="layout/plantilla :: footer"></footer>
 </body>

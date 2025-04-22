@@ -16,36 +16,51 @@
             margin-bottom: 20px; /* Espaciado entre imágenes */
         }
     </style>
-</head>
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head"></head>
 <body>
-    
-    <div th:replace="layout/plantilla :: header"></div>
+<header th:replace="layout/plantilla :: header"></header>
 
-    <header class="bg-primary text-center text-white p-4">
-        <h1 class="fs-2">Horario de Clases</h1>
-    </header>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="text-primary" th:text="#{horario.titulo}">Horarios de Atención</h2>
+        <i class="far fa-clock fa-3x text-success my-3"></i>
+    </div>
 
-    <div class="container text-center mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-4 d-flex flex-column align-items-center">
-                <img src="imagenes/horario1.jpg" alt="Lunes" class="mb-3"/>
-                <p class="fs-4"><strong>Lunes a Viernes</strong></p>
-                <p class="fs-5">8:00 AM - 12:00 PM</p>
-                <p class="fs-5">2:00 PM - 5:00 PM</p>
-            </div>
-            <div class="col-md-4 d-flex flex-column align-items-center">
-                <img src="imagenes/horario2.jpg" alt="Sábado" class="mb-3"/>
-                <p class="fs-4"><strong>Sábados</strong></p>
-                <p class="fs-5">9:00 AM - 1:00 PM</p>
-            </div>
-            <div class="col-md-4 d-flex flex-column align-items-center">
-                <img src="imagenes/horario3.jpg" alt="Domingo" class="mb-3"/>
-                <p class="fs-4"><strong>Domingos</strong></p>
-                <p class="fs-5">No hay clases</p>
-            </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <p class="lead" th:text="#{horario.descripcion}">
+                Ofrecemos flexibilidad en nuestros horarios para adaptarnos a las necesidades de cada familia.
+            </p>
+
+            <table class="table table-bordered table-hover shadow-sm text-center">
+                <thead class="table-success">
+                    <tr>
+                        <th th:text="#{horario.dia}">Día</th>
+                        <th th:text="#{horario.hora}">Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td th:text="#{horario.lunesviernes}">Lunes a Viernes</td>
+                        <td th:text="#{horario.horario1}">7:00 a.m. - 5:00 p.m.</td>
+                    </tr>
+                    <tr>
+                        <td th:text="#{horario.sabado}">Sábado</td>
+                        <td th:text="#{horario.horario2}">8:00 a.m. - 12:00 p.m.</td>
+                    </tr>
+                    <tr>
+                        <td th:text="#{horario.domingo}">Domingo</td>
+                        <td th:text="#{horario.cerrado}">Cerrado</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    
-    <footer th:replace="layout/plantilla :: footer"></footer>
+</div>
+
+<footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>
+

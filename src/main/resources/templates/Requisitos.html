@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Requisitos</title>
-        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
-        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    </head>
-    <body>
+<head th:replace="layout/plantilla :: head"></head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
 
-        <div th:replace="layout/plantilla :: header"></div>
-
-        <header class="bg-warning text-center p-3">
-            <h1>Requisitos</h1>
-        </header>
-
-        <div class="container text-center mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <h2>Información importante para la inscripción del niño(a)</h2>
-                    <br>
-                    <p style="font-size: 120%;">1. Documentacion del niño(a)</p>
-                    <br>
-                    <p style="font-size: 120%;">2. Documentos del Padre, Madre o tutor legal</p>
-                    <br>
-                    <p style="font-size: 120%;">3. Pago de la inscripcion</p>
-                </div>
-            </div>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h2 th:text="#{requisitos.titulo}">Requisitos de Matrícula</h2>
         </div>
 
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item" th:text="#{requisitos.item1}">Fotocopia de la cédula del padre, madre o tutor legal</li>
+                    <li class="list-group-item" th:text="#{requisitos.item2}">Fotocopia de la cédula del niño(a) o partida de nacimiento</li>
+                    <li class="list-group-item" th:text="#{requisitos.item3}">Formulario de matrícula debidamente completado</li>
+                    <li class="list-group-item" th:text="#{requisitos.item4}">Constancia médica del niño(a)</li>
+                    <li class="list-group-item" th:text="#{requisitos.item5}">2 fotos tamaño pasaporte del niño(a)</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 
-        <footer th:replace="layout/plantilla :: footer"></footer>
-    </body>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
 </html>

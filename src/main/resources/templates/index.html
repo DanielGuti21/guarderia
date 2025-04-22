@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Guardería Estrella Brillante</title>
-        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
-        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
-        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    </head>
-    <body>
-        <div th:replace="layout/plantilla :: header"></div>
+<head th:replace="layout/plantilla :: head"></head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
 
-        <header class="bg-warning text-center p-3">
-            <h1>Bienvenido a la Guardería</h1>
-        </header>
+    <header class="bg-warning text-center p-3">
+        <h1 th:text="#{titulo.bienvenida}">Bienvenido a la Guardería</h1>
+    </header>
 
-        <div class="container text-center mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <p style="font-size: 140%;">Bienvenidos a Guardería Roble Alto</p>
-                    <img src="imagenes/pPrincipal.jpg" alt="Guardería" style="width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; display: block;" />
-                </div>
+    <div class="container text-center mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <p style="font-size: 140%;" th:text="#{descripcion.inicio}">Bienvenidos a Guardería Roble Alto</p>
+                <img src="imagenes/pPrincipal.jpg" alt="Guardería" style="width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; display: block;" />
             </div>
         </div>
+    </div>
 
-        <footer th:replace="layout/plantilla :: footer"></footer>
-    </body>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
 </html>
